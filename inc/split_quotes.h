@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   environment.h                                      :+:      :+:    :+:   */
+/*   split_quotes.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 14:40:43 by huates            #+#    #+#             */
-/*   Updated: 2024/01/28 14:42:48 by huates           ###   ########.fr       */
+/*   Created: 2024/01/28 15:01:52 by huates            #+#    #+#             */
+/*   Updated: 2024/01/28 15:05:52 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENVIRONMENT_H
-# define ENVIRONMENT_H
+#ifndef SPLIT_QUOTES_H
+# define SPLIT_QUOTES_H
 
-# include <stdio.h>
 # include "../libft/libft.h"
 
-typedef struct s_envp
+typedef struct s_quote
 {
-	char			*id;
-	char			*value;
-	struct s_envp	*next;
-}t_envp;
+    int dbl;
+    int simple;
+} t_quote;
 
-t_envp *ft_envpnew(char *id, char *value);
-void ft_envpadd_back(t_envp **lst, t_envp *new);
-t_envp *ft_envplast(t_envp *lst);
-void ft_free_envp(t_envp *head);
+
+
+
+
+
+
 #endif

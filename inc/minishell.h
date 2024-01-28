@@ -6,7 +6,7 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:15:38 by huates            #+#    #+#             */
-/*   Updated: 2024/01/25 16:18:26 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:09:58 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,22 @@ typedef struct s_minishell
 
 }t_minishell;
 
+// environment
 int		init_envp(t_minishell *data, char *env[]);
 char	**ft_split_envp(char *line);
+
+// terminal
+int init_term(t_minishell *data);
+int init_term_fd(t_minishell *data);
+
+// signal
+void ft_signal_handler(int sig);
+
+// display_prompt
+char *display_prompt_msg(void);
+
+// commands
+int ft_commands(t_minishell *data);
+int ft_count_commands(char *raw_cmd);
 
 #endif

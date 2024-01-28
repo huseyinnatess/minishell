@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env_lstcreate.c                                    :+:      :+:    :+:   */
+/*   envp_lstcreate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:07:40 by huates            #+#    #+#             */
-/*   Updated: 2024/01/25 16:16:18 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/26 13:14:45 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/environment.h"
 
+// '=' işaretinden önceki kısım id, sonraki kısım value oluyor.
 t_envp *ft_envpnew(char *id, char *value)
 {
     t_envp *str;

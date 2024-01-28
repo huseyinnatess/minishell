@@ -8,8 +8,8 @@ PATHB = build/
 PATHO = build/objs/
 PATHS = src/
 PATHENVP = src/environment/
-PATHSP = src/parser/
-PATHSB = src/builtins/
+PATHSP = src/terminal/
+PATHSB = src/command/
 PATHSEX = src/expander/
 PATHSU = src/utils/
 PATHSE = src/error/
@@ -19,9 +19,16 @@ PATHEX = src/executor/
 BUILD_PATHS = $(PATHB) $(PATHO)
 
 src	=	src/main.c \
+		src/ft_signal_handler.c \
+		src/display_prompt.c \
 		src/environment/envp_lstcreate.c \
 		src/environment/ft_split_envp.c \
 		src/environment/init_envp.c \
+		src/environment/free_envp.c \
+		src/terminal/term_setting.c \
+		src/terminal/term_fd.c \
+		src/command/commands.c \
+		src/command/command_utils.c \
 
 OBJS	=	$(addprefix $(PATHO), $(notdir $(patsubst %.c, %.o, $(src))))
 

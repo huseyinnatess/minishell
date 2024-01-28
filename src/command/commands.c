@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   environment.h                                      :+:      :+:    :+:   */
+/*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 14:40:43 by huates            #+#    #+#             */
-/*   Updated: 2024/01/28 14:42:48 by huates           ###   ########.fr       */
+/*   Created: 2024/01/28 14:55:52 by huates            #+#    #+#             */
+/*   Updated: 2024/01/28 18:33:32 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENVIRONMENT_H
-# define ENVIRONMENT_H
+#include "../inc/minishell.h"
 
-# include <stdio.h>
-# include "../libft/libft.h"
-
-typedef struct s_envp
+int ft_commands(t_minishell *data)
 {
-	char			*id;
-	char			*value;
-	struct s_envp	*next;
-}t_envp;
-
-t_envp *ft_envpnew(char *id, char *value);
-void ft_envpadd_back(t_envp **lst, t_envp *new);
-t_envp *ft_envplast(t_envp *lst);
-void ft_free_envp(t_envp *head);
-#endif
+    data -> nbr_of_cmds = ft_count_commands(data -> raw_cmd);
+    (void) data;
+    return (0);
+}

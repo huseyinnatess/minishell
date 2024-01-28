@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   environment.h                                      :+:      :+:    :+:   */
+/*   free_envp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 14:40:43 by huates            #+#    #+#             */
-/*   Updated: 2024/01/28 14:42:48 by huates           ###   ########.fr       */
+/*   Created: 2024/01/28 14:39:58 by huates            #+#    #+#             */
+/*   Updated: 2024/01/28 14:44:58 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENVIRONMENT_H
-# define ENVIRONMENT_H
+#include "../inc/environment.h"
 
-# include <stdio.h>
-# include "../libft/libft.h"
-
-typedef struct s_envp
+void ft_free_envp(t_envp *head)
 {
-	char			*id;
-	char			*value;
-	struct s_envp	*next;
-}t_envp;
+    t_envp *temp;
 
-t_envp *ft_envpnew(char *id, char *value);
-void ft_envpadd_back(t_envp **lst, t_envp *new);
-t_envp *ft_envplast(t_envp *lst);
-void ft_free_envp(t_envp *head);
-#endif
+    temp = head;
+    while (temp != NULL)
+    {
+        if (temp -> id)
+            free(temp -> id);
+        if (temp -> value)
+            free(temp -> value);
+        temp = temp -> next;
+    }
+}

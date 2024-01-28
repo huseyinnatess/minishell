@@ -6,7 +6,7 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:38:40 by huates            #+#    #+#             */
-/*   Updated: 2024/01/25 16:16:00 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/26 13:14:10 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ int init_envp(t_minishell *data, char *envp[])
     if (!count)
         return (write(2, "Error: init_env\n", 16));
     data -> lstenv = NULL;
-    data -> env = ft_malloc_envp_array(envp);
+    data -> env = ft_malloc_envp_array(envp); // Environtment'leri env array'ine atıyoruz.
     if (!data -> env)
         return (write(2, "Error: init_env\n", 16));
     while (i < count)
     {
-        split = ft_split_envp(envp[i]);
+        split = ft_split_envp(envp[i]); // Envp'yi '=' işaretine göre ayırıyoruz. '=' işaretinden önceki kısım id, sonraki kısım value oluyor.
         temp = ft_envpnew(split[0], split[1]);
         if (temp)
             ft_envpadd_back(&data -> lstenv, temp);
