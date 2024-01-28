@@ -18,4 +18,13 @@ SEX ON THE BEACH ALWAYS MORE AMUSING THAN CODING !
 
 6-) init_term_fd ile data struct'ındaki std_in ve std_out değişkenlerine input ve output değerleri veriliyor. Direk 0 ve 1 olarak'da verilebilir. Bu şekilde daha sağlıklı.
 
-7-) Gelen sinyalleri yakalamak için ft_signal_handler fonksiyonu kullanılıyor. Eğer gelen sinyal Ctrl+c ise if (sig == SIGINT) bloğu çalışıyor, program bir alt satıra geçip mevcut satırı temizliyor ve boş bir satırı ekrana yazdırıyor.
+7-) Gelen sinyalleri yakalamak için ft_signal_handler fonksiyonunu kullanılıyoruz. Eğer gelen sinyal Ctrl+c ise if (sig == SIGINT) bloğu çalışıyor, program bir alt satıra geçip mevcut satırı temizliyor ve boş bir satırı ekrana yazdırıyor.
+
+8-) Eğer gelen sinyal SIGQUIT ise else if (sig == SIGQUIT) bloğu çalışıp, mevcut satırı temizler ve "Quit: 3" mesajını ekrana yazdırır. Ancak PDF'de SIGQUIT sinyali geldiğinde hiçbir şey yapılmaması isteniyor bunu engellemek için signal(SIGQUIT, SIG_IGN); fonksiyonu kullanılıyor (Signal ignore).
+
+9-) display_prompt_msg fonksiyonu ile program adı yazılıp input alımı yapıyoruz. PDF'de komut geçmişi istendiği add_history fonksiyonu ile girilen inputları geçmişe ekliyoruz (İnput'un doğru veya yanlış olduğu farketmiyor).
+Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplanmıyor.
+
+10-) Girilen input'ta hata oluşup NULL gelmesi durumunda ft_ctrl_d fonksiyonu çalışıp isatty hazır fonksiyonu ile gelen hatanın terminal'den gelme durumuna göre exit yazdırıp çıkış yapıyoruz.
+
+11-) Girilen input'un yazdırılamaz karakter içerip içermediğini, tamamen boşluk ve tab benzeri karakterlerden oluşup oluşmadığı kontrol ediliyor.
