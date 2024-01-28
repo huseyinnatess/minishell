@@ -3,7 +3,9 @@ SEX ON THE BEACH ALWAYS MORE AMUSING THAN CODING !
 
 
 1-) argc ve argv sayıları kontrol edildi.
+
 2-) init_envp fonksiyonunda environmentler data -> env dizisine kopyalandı.
+
 3-) ft_split_envp fonksiyonunda environmentler split ile '=' karakterine göre (('=') dahil değil) split[0] ve split[1] olarak ayrıldı.
 ```sh
 Örneğin:
