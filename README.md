@@ -40,3 +40,5 @@ Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplan
 15-) ft_write_syntax_errors fonksiyonunda, ft_has_valid_quotes fonksiyonu ile iç içe tırnak olup olmadığı kontrol ediyoruz. Bulduğumuz tırnak karakterlerini sayıp en son tek ve çift olma durumlarını kontrol ediyoruz.
 
 16-) ft_check_pipe_sytax fonksiyonu ile girilen komut sayısına göre pipe (|) karakterinin başta veya sonda olup olmadığını kontrol ediyoruz.
+
+17-) ft_check_redir_sytax fonksiyonu ile yönlendirme ('<', '>', '<<', '>>') işaretlerinin sayısını, doğru kullanımını ve sonda olup olmadığını kontrol ediyoruz.
