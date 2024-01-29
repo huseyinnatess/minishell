@@ -41,4 +41,4 @@ Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplan
 
 16-) ft_check_pipe_sytax fonksiyonu ile girilen komut sayısına göre pipe (|) karakterinin başta veya sonda olup olmadığını kontrol ediyoruz.
 
-17-) ft_check_redir_sytax fonksiyonu ile yönlendirme ('<', '>', '<<', '>>') işaretlerinin sayısını, doğru kullanımını ve sonda olup olmadığını kontrol ediyoruz.
+17-) ft_check_redir_sytax fonksiyonu ile yönlendirme ('<', '>', '<<', '>>') işaretlerinin sayısını, doğru kullanımını ve sonda olup olmadığını kontrol ediyoruz. (Tırnak içerisinde verilmiş iseler sayıya dahil etmiyoruz).
