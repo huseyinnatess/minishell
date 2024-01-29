@@ -10,8 +10,8 @@ PATHS = src/
 PATHENVP = src/environment/
 PATHSP = src/terminal/
 PATHSB = src/command/
-PATHSEX = src/expander/
-PATHSU = src/utils/
+PATHSEX = src/parsers/
+PATHSU = src/syntax/
 PATHSE = src/error/
 PATHP = src/pipex/
 PATHEX = src/executor/
@@ -29,6 +29,12 @@ src	=	src/main.c \
 		src/terminal/term_fd.c \
 		src/command/commands.c \
 		src/command/command_utils.c \
+		src/command/command_utils2.c \
+		src/parsers/ft_get_quotes_values.c \
+		src/syntax/syntax_error.c \
+		src/syntax/ft_has_valid_quotes.c \
+		src/syntax/ft_check_redir_syntax.c \
+		src/syntax/ft_check_pipe_syntax.c \
 
 OBJS	=	$(addprefix $(PATHO), $(notdir $(patsubst %.c, %.o, $(src))))
 

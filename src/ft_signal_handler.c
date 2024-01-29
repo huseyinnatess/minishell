@@ -6,12 +6,13 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:04:27 by huates            #+#    #+#             */
-/*   Updated: 2024/01/28 14:21:22 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/29 14:34:39 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
+// Gelen sinyalleri yakalıyor.
 void ft_signal_handler(int sig)
 {
     if (sig == SIGINT)

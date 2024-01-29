@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands.c                                         :+:      :+:    :+:   */
+/*   command_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 14:55:52 by huates            #+#    #+#             */
-/*   Updated: 2024/01/29 14:14:14 by huates           ###   ########.fr       */
+/*   Created: 2024/01/29 12:58:00 by huates            #+#    #+#             */
+/*   Updated: 2024/01/29 14:13:24 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-/*
-    1. ft_count_commands fonksiyonu ile komut sayısını buluyor.
-    2. ft_write_syntax_errors fonksiyonu ile varsa syntax hatalarını yazdırıyor.
-*/
-int ft_commands(t_minishell *data)
+// Tırnak içinde olmayam pipe var ise syntax error veriyor.
+void ft_write_syntax_error(char *raw_cmd, int i)
 {
-    data -> nbr_of_cmds = ft_count_commands(data -> raw_cmd);
-    if (ft_write_syntax_errors(data))
-        return (0);
-    return (0);
+    if (raw_cmd[i + 1] == '|')
+    {
+        ft_putstr_fd("minishell: syntax error near unexpected token `||'\n", 2);
+    }
 }

@@ -6,12 +6,13 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:57:58 by huates            #+#    #+#             */
-/*   Updated: 2024/01/26 13:10:41 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/29 14:32:52 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
+// Gelen envp yi = işaretine göre ayırıyor.
 char **ft_split_envp(char *line)
 {
     int find;

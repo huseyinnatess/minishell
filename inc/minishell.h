@@ -6,7 +6,7 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:15:38 by huates            #+#    #+#             */
-/*   Updated: 2024/01/28 16:09:58 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/29 15:02:57 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include <fcntl.h>
 
 # include "environment.h"
+# include "split_quotes.h"
 # include "../libft/libft.h"
 
 
@@ -65,6 +66,12 @@ typedef struct s_minishell
 
 }t_minishell;
 
+typedef struct s_redir
+{
+	int		redir_left;
+	int		redir_right;
+}t_redir;
+
 // environment
 int		init_envp(t_minishell *data, char *env[]);
 char	**ft_split_envp(char *line);
@@ -82,5 +89,12 @@ char *display_prompt_msg(void);
 // commands
 int ft_commands(t_minishell *data);
 int ft_count_commands(char *raw_cmd);
+
+// syntax_error
+void ft_write_syntax_error(char *raw_cmd, int i);
+int ft_write_syntax_errors(t_minishell *data);
+int		ft_has_valid_quotes(char *str);
+int ft_check_pipe_sytax(t_minishell *data);
+int ft_check_redir_sytax(char *str);
 
 #endif

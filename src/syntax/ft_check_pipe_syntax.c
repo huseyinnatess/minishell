@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands.c                                         :+:      :+:    :+:   */
+/*   ft_check_pipe_syntax.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 14:55:52 by huates            #+#    #+#             */
-/*   Updated: 2024/01/29 14:14:14 by huates           ###   ########.fr       */
+/*   Created: 2024/01/29 14:37:17 by huates            #+#    #+#             */
+/*   Updated: 2024/01/29 14:40:48 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-/*
-    1. ft_count_commands fonksiyonu ile komut sayısını buluyor.
-    2. ft_write_syntax_errors fonksiyonu ile varsa syntax hatalarını yazdırıyor.
-*/
-int ft_commands(t_minishell *data)
+// Pipe karakterinin başta veya sonda olup olmadığını kontrol ediyor.
+int ft_check_pipe_sytax(t_minishell *data)
 {
-    data -> nbr_of_cmds = ft_count_commands(data -> raw_cmd);
-    if (ft_write_syntax_errors(data))
-        return (0);
+    if (data -> raw_cmd[0] == '|')
+    {
+        ft_putstr_fd("minishell: parse error near `|'\n", 2);
+        return (1);
+    }
+    if (data -> raw_cmd[ft_strlen(data -> raw_cmd) - 1] == '|')
+    {
+       ft_putstr_fd("pipe>\n", 2);
+        return (1);
+    }
     return (0);
 }
