@@ -30,3 +30,7 @@ Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplan
 10-) Girilen input'ta hata oluşup NULL gelmesi durumunda ft_ctrl_d fonksiyonu çalışıp isatty hazır fonksiyonu ile gelen hatanın terminal'den gelme durumuna göre exit yazdırıp çıkış yapıyoruz.
 
 11-) Girilen input'un yazdırılamaz karakter içerip içermediğini, tamamen boşluk ve tab benzeri karakterlerden oluşup oluşmadığı kontrol ediliyor.
+
+12-) ft_commands ile girilen komutlar veya alıntılar (quotations) belirleniyor. Eğer girilen input içerisinde (" ", veya ' ') var ise ilgili değişkenler arttırılıyor.
+
+13-) Eğer gelen input içerisinde tırnak karakterleri yoksa ve içerisinde bir pipe (|) karakteri var ise ft_write_syntax_error fonksiyonu ile bir sonraki karakterin'de pipe olma durumu kontrol edilir ardından nbr_cmd değişkeni arttırılır. (nbr_cmd = girilen komut sayısı)
