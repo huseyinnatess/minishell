@@ -29,8 +29,12 @@ Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplan
 
 10-) Girilen input'ta hata oluşup NULL gelmesi durumunda ft_ctrl_d fonksiyonu çalışıp isatty hazır fonksiyonu ile gelen hatanın terminal'den gelme durumuna göre exit yazdırıp çıkış yapıyoruz.
 
-11-) Girilen input'un yazdırılamaz karakter içerip içermediğini, tamamen boşluk ve tab benzeri karakterlerden oluşup oluşmadığı kontrol ediliyor.
+11-) Girilen input'un yazdırılamaz karakter içerip içermediğini, tamamen boşluk ve tab benzeri karakterlerden oluşup oluşmadığını kontrol ediliyor.
 
-12-) ft_commands ile girilen komutlar veya alıntılar (quotations) belirleniyor. Eğer girilen input içerisinde (" ", veya ' ') var ise ilgili değişkenler arttırılıyor.
+12-) ft_commands ile girilen komutlar veya alıntılar (quotations) belirleniyor. Eğer girilen input içerisinde (" ", veya ' ') var ise ilgili değişkenleri arttırıyoruz.
 
-13-) Eğer gelen input içerisinde tırnak karakterleri yoksa ve içerisinde bir pipe (|) karakteri var ise ft_write_syntax_error fonksiyonu ile bir sonraki karakterin'de pipe olma durumu kontrol edilir ardından nbr_cmd değişkeni arttırılır. (nbr_cmd = girilen komut sayısı)
+13-) Eğer gelen input içerisindeki tırnak karakterlerinin içide pipe (|) yok ise bir sonraki karakterin pipe olma durumunu kontrol ediyoruz.
+
+14-) Bulunan komut sayıları data -> nbr_of_cmds değişkenine aktarıp ft_write_syntax_errors fonksiyonu ile olası syntax hatalarını kontrol ediyoruz.
+
+15-) ft_write_syntax_errors fonksiyonunda, ft_has_valid_quotes fonksiyonu ile iç içe tırnak olup olmadığı kontrol ediyoruz. Bulduğumuz tırnak karakterlerini sayıp en son tek ve çift olma durumlarını kontrol ediyoruz.
