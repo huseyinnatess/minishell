@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commands.c                                         :+:      :+:    :+:   */
+/*   ft_check_var_rules.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 14:55:52 by huates            #+#    #+#             */
-/*   Updated: 2024/01/30 15:54:40 by huates           ###   ########.fr       */
+/*   Created: 2024/01/30 14:04:53 by huates            #+#    #+#             */
+/*   Updated: 2024/01/30 14:35:15 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-
-/*
-    1. ft_count_commands fonksiyonu ile komut sayısını buluyor.
-    2. ft_write_syntax_errors fonksiyonu ile varsa syntax hatalarını yazdırıyor.
+/* 
+    Gelen variable'ın ilk karakteri sayı ise veya
+    variable'ın içinde alphanumerik olmayan bir karakter varsa
+    ('-' hariç), 0 döndürür.
 */
-int ft_commands(t_minishell *data)
+int ft_check_var_rules(char *variable)
 {
-    data -> nbr_of_cmds = ft_count_commands(data -> raw_cmd);
-    if (ft_write_syntax_errors(data))
+    int i;
+
+    i = 0;
+    if (ft_isdigit(variable[0]))
         return (0);
-    while (ft_strchr_variable(data -> raw_cmd))  
-        data -> raw_cmd = ft_parse_variables(data);
-    return (0);
+    while (variable[i])
+    {
+        if (!ft_isalnum(variable[i]) && variable[i] != '_')
+            return (0);
+        i++;
+    }
+    return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:15:38 by huates            #+#    #+#             */
-/*   Updated: 2024/01/29 15:02:57 by huates           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:30:08 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 # include "environment.h"
 # include "split_quotes.h"
+# include "variable.h"
 # include "../libft/libft.h"
 
 
@@ -96,5 +97,13 @@ int ft_write_syntax_errors(t_minishell *data);
 int		ft_has_valid_quotes(char *str);
 int ft_check_pipe_sytax(t_minishell *data);
 int ft_check_redir_sytax(char *str);
+
+// Variables
+char *ft_strchr_variable(char *raw_cmd);
+char *ft_parse_variables(t_minishell *data);
+
+// replace_string
+char	*ft_replace_string(char *str, char *replace, char *replacer);
+
 
 #endif

@@ -12,7 +12,7 @@ PATHSP = src/terminal/
 PATHSB = src/command/
 PATHSEX = src/parsers/
 PATHSU = src/syntax/
-PATHSE = src/error/
+PATHSE = src/variables/
 PATHP = src/pipex/
 PATHEX = src/executor/
 
@@ -35,6 +35,8 @@ src	=	src/main.c \
 		src/syntax/ft_has_valid_quotes.c \
 		src/syntax/ft_check_redir_syntax.c \
 		src/syntax/ft_check_pipe_syntax.c \
+		src/variables/ft_parsevar.c \
+		src/variables/ft_check_var_rules.c \
 
 OBJS	=	$(addprefix $(PATHO), $(notdir $(patsubst %.c, %.o, $(src))))
 
