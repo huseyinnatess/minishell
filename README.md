@@ -42,3 +42,26 @@ Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplan
 16-) ft_check_pipe_sytax fonksiyonu ile girilen komut sayısına göre pipe (|) karakterinin başta veya sonda olup olmadığını kontrol ediyoruz.
 
 17-) ft_check_redir_sytax fonksiyonu ile yönlendirme ('<', '>', '<<', '>>') işaretlerinin sayısını, doğru kullanımını ve sonda olup olmadığını kontrol ediyoruz. (Tırnak içerisinde verilmiş iseler sayıya dahil etmiyoruz).
+
+18-) ft_strchr_variable fonksiyonuna girilen inputu gönderiyoruz. Bu fonksiyon eğer ortam değişkeni varsa ($, $?) bu değişkenleri ft_parse_variables fonksiyonuna gönderiyor.
+
+19-) ft_parse_variables fonksiyonu ise tekrardan ft_strchr_variable fonksiyonuna girilen inputu gönderip dönen değeri variable değişkeninde tutar. (Dönüş değeri ortam değişkeninin input'taki başlangıç adresidir.)
+
+20-) Dönen değer eğer "?" ise (örnek: echo $??? input'unun çıktısı 0??'dir. "?" önceki komutun başarılı olma durumunda 0 başarısız olma durumunda 0 return eder) ft_status_variable fonksiyonuna gönderilir.
+
+21-) ft_status_variable ise terminal çıktısında gösterilecek 0 ve input'un tamamı ile beraber ft_replace_string fonksiyonuna gönderir.
+
+22-) ft_replace_string ise gelen input'tan ortam değişkenine kadar olan kısmın uzunluğunu, ilk "?" karakternden sonraki kısmın uzunluğunu ve string biçimlerini ayrı ayrı değişkenlerde tutar. (İlk "?" yerine 0 gelecek hesaplamaya dahil edilmiyor). Ardından ft_alloc_replacer'a parametre olarak string'leri gönderiyor.
+
+23-) ft_alloc_replacer fonksiyonunda ilk olarak ortam değişkenine kadar olan kısım ile eklenecek olan 0 karakteri birleştiriliyor. Ardından ilk soru işaretinden sonraki kısım birleştiriliyor.
+
+```sh
+Örneğin:
+      echo $???
+
+      before_rp = echo
+      replacer = 0
+      after_rp = ??
+
+      new_str = echo 0??
+```
