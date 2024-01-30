@@ -59,7 +59,7 @@ Not: İnput'un uzunluğunun ft_strlen ile hesaplanmasında program ismi hesaplan
 Örneğin:
       echo $???
 
-      before_rp = echo
+      before_rp = echo (boşluk da dahil)
       replacer = 0
       after_rp = ??
 
