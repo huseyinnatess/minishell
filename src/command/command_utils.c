@@ -6,13 +6,14 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 14:57:39 by huates            #+#    #+#             */
-/*   Updated: 2024/01/29 14:12:57 by huates           ###   ########.fr       */
+/*   Updated: 2024/02/06 13:49:03 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
 // Gelen komutları sayıp tırnak içinde olmayan pipe'ları kontrol ediyor.
+// Bu fonksiyon çalıştı ise minimum 1 komut vardır.
 int ft_count_commands(char *raw_cmd)
 {
     int i;

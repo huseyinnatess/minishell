@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_var_rules.c                               :+:      :+:    :+:   */
+/*   ft_isvar.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 14:04:53 by huates            #+#    #+#             */
-/*   Updated: 2024/02/05 13:53:56 by huates           ###   ########.fr       */
+/*   Created: 2024/02/05 14:11:28 by huates            #+#    #+#             */
+/*   Updated: 2024/02/05 14:12:48 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-/* 
-    Gelen variable'ın ilk karakteri sayı ise veya
-    variable'ın içinde alphanumerik olmayan bir karakter varsa
-    ('_' hariç), 0 döndürür.
-*/
-int ft_check_var_rules(char *variable)
-{
-    int i;
 
-    i = 0;
-    if (ft_isdigit(variable[0]))
-        return (0);
-    while (variable[i])
+// Gelen variable'ın envp'de olup olmadığını kontrol ediyor.
+int ft_isvariable(t_envp *envp, char *variable)
+{
+    t_envp *temp;
+
+    temp = envp;
+    while (temp)
     {
-        if (!ft_isalnum(variable[i]) && variable[i] != '_')
-            return (0);
-        i++;
+        if (ft_strcmp(temp -> id, variable) == 0)
+            return (1);
+        temp = temp -> next;
     }
-    return (1);
+    return (0);
 }

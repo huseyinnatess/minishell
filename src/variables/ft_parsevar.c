@@ -6,7 +6,7 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:18:11 by huates            #+#    #+#             */
-/*   Updated: 2024/01/30 15:05:42 by huates           ###   ########.fr       */
+/*   Updated: 2024/02/06 13:51:16 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char *ft_get_export_id(char *variable)
     return(result);
 }
 
-// Ortam değişkenlerinin olup olmadığını kontrol ediyor.
+/* Ortam değişkenlerinin olup olmadığını kontrol ediyor. */
 char *ft_strchr_variable(char *raw_cmd)
 {
     int i;
@@ -66,6 +66,10 @@ char *ft_strchr_variable(char *raw_cmd)
     return (NULL);
 }
 
+/*
+    status değişkenini stringe çevirir ve
+    raw_cmd içerisindeki variable'ı status ile değiştirir.
+*/
 char *ft_status_variable(t_minishell *data, char *variable)
 {
     char *result;
@@ -78,18 +82,37 @@ char *ft_status_variable(t_minishell *data, char *variable)
     return (result);
 }
 
+/*
+   Gelen variable'ın envp listesinde olup olmadığını kontrol eder.
+   Eğer varsa envp listesindeki value'sini döndürür.
+   '?' karakteri var ise ft_status_variable fonksiyonunu çağırır.
+   Eğer variable envp listesinde yoksa gelen variable'ı siler.
+*/
 char *ft_parse_variables(t_minishell *data)
 {
     char *result;
     char *variable;
     t_envp *tmp;
 
-    (void) tmp;
     variable = ft_strchr_variable(data -> raw_cmd);
     if (variable && ft_strlen(variable) > 1)
     {
         variable = ft_get_export_id(variable);
         if (ft_strcmp(variable, "?") == 0)
             return(ft_status_variable(data, variable));
+        else
+        {
+            if (ft_isvariable(data -> lstenv, variable))
+            { 
+                tmp = ft_find_id(data -> lstenv, variable);
+                result = ft_replace_string(data -> raw_cmd, tmp -> id, tmp -> value);
+            }
+            else
+                result = ft_replace_string(data -> raw_cmd, variable, "");
+            free(variable);
+            free(data -> raw_cmd);
+            return (result);
+        }
     }
+    return (data -> raw_cmd);
 }

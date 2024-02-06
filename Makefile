@@ -13,8 +13,8 @@ PATHSB = src/command/
 PATHSEX = src/parsers/
 PATHSU = src/syntax/
 PATHSE = src/variables/
+PATHEX = src/redirections/
 PATHP = src/pipex/
-PATHEX = src/executor/
 
 BUILD_PATHS = $(PATHB) $(PATHO)
 
@@ -25,11 +25,13 @@ src	=	src/main.c \
 		src/environment/ft_split_envp.c \
 		src/environment/init_envp.c \
 		src/environment/free_envp.c \
+		src/environment/envp_lstutils.c \
 		src/terminal/term_setting.c \
 		src/terminal/term_fd.c \
 		src/command/commands.c \
 		src/command/command_utils.c \
 		src/command/command_utils2.c \
+		src/command/init_cmd_data.c \
 		src/parsers/ft_get_quotes_values.c \
 		src/syntax/syntax_error.c \
 		src/syntax/ft_has_valid_quotes.c \
@@ -37,6 +39,10 @@ src	=	src/main.c \
 		src/syntax/ft_check_pipe_syntax.c \
 		src/variables/ft_parsevar.c \
 		src/variables/ft_check_var_rules.c \
+		src/variables/ft_replacevar.c \
+		src/variables/ft_isvar.c \
+		src/redirections/ft_get_redir_values.c \
+		src/redirections/ft_get_values.c \
 
 OBJS	=	$(addprefix $(PATHO), $(notdir $(patsubst %.c, %.o, $(src))))
 

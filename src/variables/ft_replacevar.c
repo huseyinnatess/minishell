@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replacevar.c                                    :+:      :+:    :+:   */
+/*   ft_variablevar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:07:48 by huates            #+#    #+#             */
-/*   Updated: 2024/01/30 16:41:23 by huates           ###   ########.fr       */
+/*   Updated: 2024/02/05 14:00:57 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-static char *ft_alloc_replacer(char *replacer, char *before_rp, char *after_rp)
+/*
+   İlk if bloğu status'ın uzunluğunu kontrol eder 
+   ve eğer status'ın uzunluğu 0'dan büyükse ilk önce
+   before_rp ve status'ı birleştirir ve sonra after_rp ile birleştirir.
+*/
+static char *ft_alloc_status(char *status, char *before_rp, char *after_rp)
 {
     char	*new_str;
 
-	if (ft_strlen(replacer))
+	if (ft_strlen(status))
 	{
-		new_str = ft_strjoin(before_rp, replacer);
+		new_str = ft_strjoin(before_rp, status);
 		new_str = ft_strjoinfree(new_str, after_rp);
 	}
 	else
@@ -37,13 +42,12 @@ static char *ft_alloc_replacer(char *replacer, char *before_rp, char *after_rp)
 }
 
 /*
-	'?' barındıran bir variable için kullanılır.
-	before_len değişkeni '?''den önceki kısmın uzunluğunu tutar.
-	after_len değişkeni '?''den sonraki kısmın uzunluğunu tutar.
-	before_rp değişkeni '?''den önceki kısmı string olarak tutar.
-	after_rp değişkeni ilk soru '?''den sonraki kısmı string olarak tutar.
+	before_len değişkeni variable'dan önceki kısmın uzunluğunu tutar.
+	after_len değişkeni variable'dan sonraki kısmın uzunluğunu tutar.
+	before_rp değişkeni variable'dan önceki kısmı string olarak tutar.
+	after_rp değişkeni variable'dan sonraki kısmı string olarak tutar.
 */
-char *ft_replace_string(char *str, char *replace, char *replacer)
+char *ft_replace_string(char *str, char *variable, char *status)
 {
     char *before_rp;
     char *after_rp;
@@ -53,9 +57,9 @@ char *ft_replace_string(char *str, char *replace, char *replacer)
 
     new_str = NULL;
     before_len = ft_strchr_variable(str) - str;
-    after_len = ft_strlen(ft_strchr_variable(str) + ft_strlen(replace));
+    after_len = ft_strlen(ft_strchr_variable(str) + ft_strlen(variable));
 	before_rp = ft_substr(str, 0, before_len);
-	after_rp = ft_substr(str, before_len + ft_strlen(replace) + 1, after_len);
-	new_str = ft_alloc_replacer(replacer, before_rp, after_rp);
+	after_rp = ft_substr(str, before_len + ft_strlen(variable) + 1, after_len);
+	new_str = ft_alloc_status(status, before_rp, after_rp);
 	return (new_str);
 }

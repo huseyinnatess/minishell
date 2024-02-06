@@ -6,7 +6,7 @@
 /*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:15:38 by huates            #+#    #+#             */
-/*   Updated: 2024/01/30 16:30:08 by huates           ###   ########.fr       */
+/*   Updated: 2024/02/06 14:12:50 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ typedef struct s_redir
 // environment
 int		init_envp(t_minishell *data, char *env[]);
 char	**ft_split_envp(char *line);
+t_envp *ft_find_id(t_envp *envp, char *id);
 
 // terminal
 int init_term(t_minishell *data);
@@ -90,6 +91,11 @@ char *display_prompt_msg(void);
 // commands
 int ft_commands(t_minishell *data);
 int ft_count_commands(char *raw_cmd);
+void ft_init_data_one_cmd(t_minishell *data);
+
+// redirections
+void	ft_get_redit_value(char *raw_cmd, t_minishell *data);
+void ft_get_value_infile(t_minishell *data, char *raw_cmd);
 
 // syntax_error
 void ft_write_syntax_error(char *raw_cmd, int i);
@@ -101,9 +107,10 @@ int ft_check_redir_sytax(char *str);
 // Variables
 char *ft_strchr_variable(char *raw_cmd);
 char *ft_parse_variables(t_minishell *data);
+int ft_isvariable(t_envp *envp, char *variable);
 
 // replace_string
-char	*ft_replace_string(char *str, char *replace, char *replacer);
+char	*ft_replace_string(char *str, char *variable, char *status);
 
 
 #endif
