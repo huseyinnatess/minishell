@@ -3,17 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   tokenize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glajara- <glajara-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 13:44:44 by alajara-          #+#    #+#             */
-/*   Updated: 2023/12/14 19:24:09 by glajara-         ###   ########.fr       */
+/*   Created: 2024/02/17 14:30:59 by ydunay            #+#    #+#             */
+/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "token.h"
-#include "input_utils.h"
-#include "basic_utils.h"
-#include "list.h"
+#include "../inc/minishell.h"
+
+// Returns TRUE if 'str' is a valid word, FALSE otherwise.
+int	is_word(const char *str)
+{
+	int	q_stat;
+
+	q_stat = UNQUOTED;
+	while (*str)
+	{
+		if (q_stat == UNQUOTED && is_metachr(*str))
+			return (FALSE);
+		quote_stat(&q_stat, *str);
+		++str;
+	}
+	if (q_stat != UNQUOTED)
+		return (FALSE);
+	return (TRUE);
+}
 
 // Given that 'str' points to a quote character, returns the distance to the
 // next quote character of the same kind.

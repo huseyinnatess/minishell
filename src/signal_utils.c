@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   signal_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glajara- <glajara-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 17:50:54 by alajara-          #+#    #+#             */
-/*   Updated: 2023/12/18 18:59:01 by glajara-         ###   ########.fr       */
+/*   Created: 2024/02/17 14:11:35 by ydunay            #+#    #+#             */
+/*   Updated: 2024/02/17 18:45:44 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "signal_utils.h"
-#include "readline.h"
-#include "history.h"
+#include <readline/readline.h>
+#include <readline/history.h>
 #include <signal.h>
 #include <termios.h>
-#include "boolean.h"
-#include <unistd.h>
-#include <stdlib.h>
+#include "../inc/minishell.h"
+// #include <unistd.h> TEKRAR BAKILACAK
 
 static void	inter_handler(int sig)
 {

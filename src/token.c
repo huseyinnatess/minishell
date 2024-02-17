@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   token.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glajara- <glajara-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 15:46:55 by glajara-          #+#    #+#             */
-/*   Updated: 2023/12/14 19:01:55 by glajara-         ###   ########.fr       */
+/*   Created: 2024/02/17 14:36:52 by ydunay            #+#    #+#             */
+/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "token.h"
-#include "basic_utils.h"
-#include "input_utils.h"
-#include "quote_utils.h"
-#include "list.h"
+#include "../inc/minishell.h"
 
 // Given a string representing a token, returns its type.
 int	tok_type(const char *str)

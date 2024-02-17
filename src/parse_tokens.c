@@ -5,15 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 15:09:34 by glajara-          #+#    #+#             */
-/*   Updated: 2024/02/10 11:41:40 by ydunay           ###   ########.fr       */
+/*   Created: 2024/02/17 14:43:02 by ydunay            #+#    #+#             */
+/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
-#include "basic_utils.h"
-#include "token.h"
-#include "print_error.h"
+#include "../inc/minishell.h"
 
 // Returns TRUE if the token at 'node' is a valid redirection token,
 // returns FALSE otherwise.

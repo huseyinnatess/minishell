@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_input.c                                        :+:      :+:    :+:   */
+/*   list3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 18:26:25 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 19:06:39 by ydunay           ###   ########.fr       */
+/*   Created: 2024/02/17 17:53:28 by ydunay            #+#    #+#             */
+/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-#include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
 
-// Prints the prompt and waits for user input (managing the history).
-// Allocates and returns the string provided by the user.
-char	*get_input(void)
+// Returns the first node of the list.
+t_list	*lst_first(t_list *lst)
 {
-	char	*str;
+	while (lst && lst->pre)
+		lst = lst->pre;
+	return (lst);
+}
 
-	str = readline("minish % ");
-	if (str && *str)
-		add_history(str);
-	return (str);
+void	lst_split(t_list *node)
+{
+	t_list	*prev;
+
+	if (!node)
+		return ;
+	prev = node->pre;
+	if (prev)
+		prev->nxt = NULL;
+	node->pre = NULL;
 }
