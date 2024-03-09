@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:43:02 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/02/24 13:27:29 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,9 @@ t_list	**parse(t_list *tokens, int *exit_status)
 	i = -1;
 	node = tokens;
 	while (++i < cmd_amount)
+	{
 		add_cmd(&cmds[i], &node);
+	}
 	cmds[i] = NULL;
 	return (cmds);
 }

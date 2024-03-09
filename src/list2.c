@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:48:08 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/03 11:07:46 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	lst_rm_many(t_list **lst, t_list *to_rm, size_t n, void (*del)(void *))
 	t_list	*prev;
 	t_list	*next;
 
-	if (!*lst & !to_rm)
+	if (!*lst && !to_rm)
 		return ;
 	if (*lst == to_rm)
 		*lst = lst_move(*lst, n);

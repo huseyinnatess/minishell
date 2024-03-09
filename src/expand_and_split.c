@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:49:50 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/03 12:14:22 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void	expand_xtok(t_xtoken *xtok, int exit_status, char **env)
 	while (node && node->val)
 	{
 		if (try_to_expand(node))
-		{
+		{ 
 			if (((t_xchar *)((node->nxt)->val))->c == '?')
 				expand_exit_stat(&(xtok->val), &node, exit_status);
 			else

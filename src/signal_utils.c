@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:11:35 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:45:44 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/02/24 11:38:54 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <signal.h>
 #include <termios.h>
 #include "../inc/minishell.h"
-// #include <unistd.h> TEKRAR BAKILACAK
 
 static void	inter_handler(int sig)
 {
