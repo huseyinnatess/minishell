@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:06:35 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:47:39 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 // Returns TRUE if the string 'str' is the name of a builtin.
 int	is_builtin_name(const char *str)
 {
-	if (!ft_strncmp(str, "cd", 3) || !ft_strncmp(str, "echo", 5) || \
-	!ft_strncmp(str, "env", 4) || !ft_strncmp(str, "exit", 5) || \
-	!ft_strncmp(str, "export", 7) || !ft_strncmp(str, "pwd", 4) || \
-	!ft_strncmp(str, "unset", 6))
+	if (!ft_strncmp(str, "cd", 3) || !ft_strncmp(str, "echo", 5)
+		|| !ft_strncmp(str, "env", 4) || !ft_strncmp(str, "exit", 5)
+		|| !ft_strncmp(str, "export", 7) || !ft_strncmp(str, "pwd", 4)
+		|| !ft_strncmp(str, "unset", 6))
 		return (TRUE);
 	return (FALSE);
 }
@@ -63,7 +63,7 @@ int	exec_builtin(char **args, int exit_status, char ***env, int is_child)
 	else if (!ft_strncmp(args[0], "exit", 5))
 		exit_status = exit_builtin(++args, exit_status, is_child);
 	else if (!ft_strncmp(args[0], "export", 7))
-		exit_status = export_builtin(++args, env);
+		exit_status = export_builtin(++args, env, 0);
 	else if (!ft_strncmp(args[0], "pwd", 4))
 		exit_status = pwd_builtin();
 	else if (!ft_strncmp(args[0], "unset", 6))

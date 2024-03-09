@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:36:31 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:19:17 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	can_execute(const char *path)
 	return (TRUE);
 }
 
-// Waits for 'n' (n > 0) children processes to finish and returns the 
+// Waits for 'n' (n > 0) children processes to finish and returns the
 // exit status of the 'last_pid' (if exited).
 int	wait_children(pid_t last_pid, size_t n)
 {

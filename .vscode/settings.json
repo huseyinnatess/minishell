@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "_useconds_t.h": "c",
+        "minishell.h": "c",
+        "fcntl.h": "c"
+    }
+}

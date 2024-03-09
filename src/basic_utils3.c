@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:49:12 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:17:57 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	digit_count(int n)
 	return (digits);
 }
 
-// Allocates (with malloc(3)) and returns a string representing the integer 
+// Allocates (with malloc(3)) and returns a string representing the integer
 // received as an argument. Negative numbers must be handled.
 // Exits properly if malloc fails.
 char	*ft_itoa(int n)
@@ -65,8 +65,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	if (dst == NULL && src == NULL)
 		return (dst);
-	dstcpy = (unsigned char *) dst;
-	srccpy = (unsigned char *) src;
+	dstcpy = (unsigned char *)dst;
+	srccpy = (unsigned char *)src;
 	while (n-- > 0)
 		*dstcpy++ = *srccpy++;
 	return (dst);

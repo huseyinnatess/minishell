@@ -18,6 +18,7 @@ SRCS		= src/main.c \
 			  src/exec_utils2.c \
 			  src/exit.c \
 			  src/expand_and_split.c \
+			  src/expand_and_split2.c \
 			  src/export.c \
 			  src/input_utils.c \
 			  src/list.c \
@@ -30,6 +31,7 @@ SRCS		= src/main.c \
 			  src/print_errors3.c \
 			  src/quote_utils.c \
 			  src/redirect_and_execute.c \
+			  src/redirect_and_execute2.c \
 			  src/redirect_utils.c \
 			  src/redirect_utils2.c \
 			  src/redirect_utils3.c \

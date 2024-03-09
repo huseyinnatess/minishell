@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_utils3.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:38:26 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:17:31 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,3 @@ void	link_write_end(int *fd_pipe)
 	dup2(fd_pipe[WRITE_END], STDOUT_FILENO);
 	close(fd_pipe[WRITE_END]);
 }
-

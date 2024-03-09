@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tokenize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:30:59 by ydunay            #+#    #+#             */
-/*   Updated: 2024/03/03 10:22:40 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:16:36 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static int	distance_next_quote(const char *str)
 static int	toklen(const char *str)
 {
 	int	len;
+
 	len = 0;
 	if (is_redirectionchr(*str) && *str == *(str + 1))
 		return (2);
@@ -96,7 +97,7 @@ t_list	*tokenize(const char *input)
 	{
 		str = pop_token(input, &i);
 		if (!*str)
-			break ;   
+			break ;
 		tok = tok_create(str);
 		free(str);
 		lst_add(&tokens, lst_new(&tok, sizeof(tok)));

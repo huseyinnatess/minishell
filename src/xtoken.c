@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   xtoken.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:53:08 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/24 16:33:43 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:16:04 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	xtok_addxc(t_xtoken *xtok, t_xchar xc)
 	lst_add(&(xtok->val), lst_new(&xc, sizeof(xc)));
 }
 
-// Returns an integer greater than, equal to, or less than 0, according as the 
+// Returns an integer greater than, equal to, or less than 0, according as the
 // string the value of 'xtok' is greater than, equal to, or less than 'str',
 // comparing not more than 'n' characters.
 int	xtok_strncmp(t_xtoken *xtok, const char *str, size_t n)

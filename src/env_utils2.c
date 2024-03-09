@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:23:52 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:19:05 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ char	**arrstr_rm(char **arr, int i)
 // Removes the environment variable 'varname'.
 void	env_rm_var(const char *varname, char ***env)
 {
-	int		var_index;
+	int	var_index;
 
 	var_index = env_find_var_index(varname, *env);
 	if (var_index >= 0)
 		*env = arrstr_rm(*env, var_index);
 }
 
-// Unset every variable in args from env. 
+// Unset every variable in args from env.
 // If no errors are found, returns 0.
 // Otherwise returns error with the proper message and exit_status.
 int	unset_builtin(char **args, char ***env)

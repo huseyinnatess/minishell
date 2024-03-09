@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:02:08 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:18:29 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	try_cdpath(char *str, char **env)
 	return (FALSE);
 }
 
-// Changes the actual dir. 
+// Changes the actual dir.
 // If no 'args' is set, search for the env variable PATH.
 // The first element of 'args' is taken as the new path.
 // It it is a relative path tries appending CDPATH values, printing the current

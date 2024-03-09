@@ -6,12 +6,11 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:13:41 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 12:06:29 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-#include <unistd.h>
 #include <stdio.h>
 
 static int	is_flag(char *word)
@@ -38,8 +37,8 @@ static int	get_flag(char **args)
 	return (idx);
 }
 
-// Output the 'args', separated by spaces, followed by a newline. 
-// The return status is always 0. 
+// Output the 'args', separated by spaces, followed by a newline.
+// The return status is always 0.
 // If -n is specified, the trailing newline is suppressed.
 int	echo_builtin(char **args)
 {

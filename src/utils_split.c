@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils_split.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: huates <huates@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:34:09 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:16:51 by huates           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-// Counts the amount of substrings resulting from splitting 's' using the 
+// Counts the amount of substrings resulting from splitting 's' using the
 // char 'c' as a delimeter.
 static size_t	count_substr(char *s, char c)
 {
@@ -74,8 +74,8 @@ static void	*freearr(char **arr)
 	return (NULL);
 }
 
-// Allocates (with malloc(3)) and returns an array of strings obtained by 
-// splitting 's' using the character 'c' as a delimiter. 
+// Allocates (with malloc(3)) and returns an array of strings obtained by
+// splitting 's' using the character 'c' as a delimiter.
 // Exits properly if malloc fails.
 char	**ft_split(char const *s, char c)
 {
@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	count = 0;
-	str = (char *) s;
+	str = (char *)s;
 	substr_count = count_substr(str, c);
 	arr = (char **)p_malloc((substr_count + 1) * sizeof(char *));
 	while (count < substr_count)

@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_utils2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fduvan <fduvan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:14:27 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 19:02:07 by fduvan           ###   ########.fr       */
+/*   Updated: 2024/03/09 12:19:44 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-#include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <readline/readline.h>
+#include <unistd.h>
 
 // Opens the file 'filename' with the 'flags' and returns its file descriptor.
 // On failure, prints an error message and returns -1 (setting errno).
-
 
 // Creates a here document, reading the standard input until 'd' is found and
 // saving the content into the specified temp 'file'.
@@ -48,7 +47,7 @@ static int	read_hd_child(const char *d, int x, const char *file, char **env)
 			line = tmp;
 		}
 		ft_putendl_fd(line, fd_file);
-        free(line);
+		free(line);
 	}
 	exit(close(fd_file));
 }
@@ -94,7 +93,7 @@ int	read_heredoc(const char *delim, int exp, const char *file, char **env)
 
 	pid = fork();
 	if (pid == -1)
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	if (pid == 0)
 		read_hd_child(delim, exp, file, env);
 	wait(&status);

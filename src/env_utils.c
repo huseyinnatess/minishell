@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:31:21 by ydunay            #+#    #+#             */
-/*   Updated: 2024/03/03 12:20:55 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:18:49 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ char	*env_find_var_line(const char *varname, char **env)
 		return (NULL);
 	while (*env)
 	{
-		if (!ft_strncmp(*env, varname, name_len)
-			&& (*env)[name_len] && (*env)[name_len] == '=')
+		if (!ft_strncmp(*env, varname, name_len) && (*env)[name_len]
+			&& (*env)[name_len] == '=')
 			return ((char *)*env);
 		++env;
 	}

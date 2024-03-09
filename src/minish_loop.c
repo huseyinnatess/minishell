@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:18:05 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/24 11:48:54 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:53:42 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static void	force_exit(int exit_status)
 {
 	if (isatty(STDOUT_FILENO))
-		ft_putendl_fd("\033[A\033[2Kminish$ \nexit", STDERR_FILENO);
+		ft_putendl_fd("\033[A\033[2Kminish$ exit", STDERR_FILENO);
 	restore_exit(exit_status);
 }
 

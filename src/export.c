@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:18:27 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 19:23:48 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 11:47:17 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,16 @@ static int	export_noargs(char **env)
 	return (0);
 }
 
-// Export every variable in 'args' to env. 
+// Export every variable in 'args' to env.
 // If no errors are found, returns 0.
 // Otherwise returns error with the proper message and exit_status.
-int	export_builtin(char **args, char ***env)
+int	export_builtin(char **args, char ***env, int exit_status)
 {
 	char	*varname;
 	int		i;
-	int		exit_status;
 
-	exit_status = 0;
-	if (!*args)
+	if (!*args--)
 		return (export_noargs(*env));
-	--args;
 	while (++args && *args)
 	{
 		i = 0;

@@ -6,11 +6,13 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:11:08 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 12:15:41 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
+#include <stdio.h>
+#include <readline/readline.h>
 
 // Allocates and returns a string representing the here document temp filename
 // for the 'n'-th command.
@@ -80,7 +82,6 @@ static int	read_heredoc_n(const char *str, int n, char **env)
 	free(file);
 	return (ret);
 }
-
 
 // Reads the here documents for 'cmd' from left to right, into a temp file
 // knowing it's the 'n'-th command.

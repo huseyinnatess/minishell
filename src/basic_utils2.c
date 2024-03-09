@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:16:50 by ydunay            #+#    #+#             */
-/*   Updated: 2024/02/17 18:43:37 by ydunay           ###   ########.fr       */
+/*   Updated: 2024/03/09 12:04:47 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ long long	ft_atoll(char *str)
 	return (res);
 }
 
-// Allocates (with malloc(3)) and returns a new string, which is the result of 
+// Allocates (with malloc(3)) and returns a new string, which is the result of
 // the concatenation of ’s1’ and ’s2’.
 char	*ft_strjoin(char const *s1, char const *s2)
 {
