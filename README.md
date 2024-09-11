@@ -1,4 +1,91 @@
-# minishell
+### [EN]
+
+## About the Project
+
+`minishell` is a project aimed at creating a simple Unix shell. This project will help you understand and implement basic shell functionalities and system calls. The goal is to build a shell that can execute commands, manage processes, handle signals, and support basic features such as pipes and redirection.
+
+## Project Requirements
+
+- **Language**: C
+- **Standard**: POSIX compliant
+- **Dependencies**: No external libraries allowed; only standard libraries can be used.
+- **System Calls**: You need to implement system calls such as `fork`, `execve`, `wait`, and others as required.
+
+## Features
+
+The following core features must be implemented in this project:
+
+- **Command Execution**:
+  - **Basic Commands**: Ability to execute basic Unix commands like `ls`, `cat`, `grep`, `cp`, `mv`, `rm`, `touch`, etc.
+  - **Built-in Commands**:
+    - `cd [directory]`: Change the current working directory.
+    - `exit [code]`: Exit the shell. Optionally, specify an exit code.
+    - `pwd`: Print the current working directory.
+    - `echo [text]`: Print text to the screen. Supports environment variable expansion.
+
+- **Process Management**:
+  - **New Processes**: Create new processes using the `fork` system call and run commands in these processes using `execve`.
+  - **Process Termination**: Wait for child processes to terminate and retrieve their status codes using the `wait` call.
+
+- **Pipes and Redirection**:
+  - **Pipes (`|`)**: Redirect the output of one command to the input of another.
+  - **Input Redirection (`<`)**: Provide input to a command from a file.
+  - **Output Redirection (`>`)**: Redirect the output of a command to a file. Overwrite existing files.
+
+- **Signal Handling**:
+  - **Signal Catching**: Handle signals like `SIGINT` (Ctrl+C) and `SIGQUIT` (Ctrl+\) to manage interruptions and terminations appropriately.
+
+- **Environment Variables**:
+  - **Expansion**: Use and expand environment variables (`$VAR`) within commands.
+  - **Management**: Set (`export`) and unset (`unset`) environment variables.
+
+## Installation and Usage
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/huseyinnatess/minishell.git
+
+2. Navigate to the project directory:
+   
+    ```bash
+    cd minishell
+
+3. Compile the project:
+  
+    ```bash
+    make
+
+### Usage
+
+1. Start the minishell application:
+   
+    ```bash
+    ./minishell
+
+2. Inside minishell, you can execute commands as you would in a standard Unix shell. For example:
+
+    ```bash
+    ls -la
+    cd /path/to/directory
+
+3. You can include commands in pipes and redirections:
+
+   ```bash
+    cat file.txt | grep "search_term" > output.txt
+
+4. Work with environment variables:
+
+   ```bash
+    export VAR=value
+    echo $VAR
+    unset VAR
+
+5. To exit minishell, use the `exit` command or press `Ctrl+D`.
+
+### [TR]
 
 ## Proje Hakkında
 
@@ -53,7 +140,7 @@ Bu projede implemente edilmesi gereken temel özellikler şunlardır:
     ```bash
     cd minishell
 
-4. Projeyi derleyin:
+3. Projeyi derleyin:
   
     ```bash
     make
@@ -83,5 +170,5 @@ Bu projede implemente edilmesi gereken temel özellikler şunlardır:
     echo $VAR
     unset VAR
 
-5. minishell'den çıkmak için exit komutunu kullanabilir veya Ctrl+D tuşlarına basabilirsiniz.
+5. minishell'den çıkmak için `exit` komutunu kullanabilir veya `Ctrl+D` tuşlarına basabilirsiniz.
   
